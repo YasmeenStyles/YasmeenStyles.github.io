@@ -118,11 +118,14 @@
 
     function startVibrate(duration) {
 	    navigator.vibrate(duration);
+	console.log(vibrateOn);
       if (vibrateOn == false){
+      	console.log("setting vibrateOn to true");
         vibrateOn = true;
         sessionStorage.setItem("vib", vibrateOn);
       }
       else {
+      	console.log("setting vibrateOn to false");
         vibrateOn = false;
         sessionStorage.setItem("vib", vibrateOn);
     }
