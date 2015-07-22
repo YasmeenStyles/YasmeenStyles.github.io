@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> BART CHIME</title>
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script>
+    function renderStations(stations, dropdown) {
+      var stationsDropdown = $('#sel'+dropdown);
+
+      var stationsHTML = "";
+      stations.forEach(function(station) {
+        stationsHTML += "<option value='" + station + "'>" + station + "</option>";
+      });
+
+      stationsDropdown.append(stationsHTML);
+    }
+      var stations = [];
+      $.ajax({
+        type:"GET",
+        url:"http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V",
+        dataType:"xml",
+        success: function(xml){
+          $(xml).find("station").each(function(){
+            //console.log($(this).find("name").text())
+            var abbr_name = $(this).find("abbr").text() + " " + $(this).find("name").text();
+            stations.push(abbr_name);
+          });
+
+          renderStations(stations,1);
+          renderStations(stations,2);
+
+        }
+      });
+
+    function clickGo(){
+      var option = document.getElementById('sel1').value;
+      //option = option.substring(0,3);
+      var option2 = document.getElementById('sel2').value;
+      //option2 = option2.substring(0,3);
+      console.log(option);
+      console.log(option2);
+
+
+
+      if(typeof(Storage) !== "undefined"){
+        sessionStorage.setItem("start",option);
+        sessionStorage.setItem("end",option2);
+      }
+      else {
+         console.log("Sorry, your browser does not support Web Storage...");
+      }
+    }
+
+    </script>
+    <style>
+
+      body{
+        background: linear-gradient(#C8EDFF, #FFFFFF);
+        background-repeat: no-repeat;
+      }
+      body { margin:0; padding:0; }
+      #container { position:relative; margin: 0px auto; width: 80%;}
+      #map { position:relative; height: 500px; width:100%; }
+      .popupimage { width: 200px; }
+
+    </style>
+  </head>
+   <body role="document">
+
+     <!-- Fixed navbar -->
+         <nav class="navbar navbar-default navbar-fixed-top custom">
+       <div class="container">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="indexcopy.html">
+             <img style="max-width:200px; margin-top: -7px;"
+             src="bellchime.png">   <!--change the logo -->
+           </a>
+         </div>
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav">
+             <li><a href="firstpage.html">Home</a></li>
+             <li><a href="indexcopy.html">Chime</a></li>
+             <li><a href="settings.html">Settings</a></li>
+             <li><a href="about.html">About Us</a></li>
+           </ul>
+
+         </div><!--/.nav-collapse -->
+       </div>
+     </nav>
+    <br>
+    <div class="container">
+
+  <form role="form">
+    <div class="form-group" style = "padding:50px;">
+      <label for="sel1">Select location (select one):</label>
+      <select class="form-control" id="sel1">
+        <option>Select Location</option>
+      </select>
+    </div>
+  </form>
+</div>
+ <div class="container">
+   <form role="form">
+    <div class="form-group" style = "padding:50px;">
+      <label for="sel1">Select destination (select one):</label>
+      <select class="form-control" id="sel2">
+        <option>Select Destination</option>
+      </select>
+      <br>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-actions" style="text-align:center;">
+  <!-- <button onclick="clickGo()" class="btn btn-info" role="button">Go</button> -->
+  <button id="myButton" class="btn btn-info" role="button">Go</button>
+  <script type="text/javascript">
+    document.getElementById("myButton").onclick= function (){
+      var option = document.getElementById('sel1').value;
+      option = option.substring(0,4);
+      var option2 = document.getElementById('sel2').value;
+      option2 = option2.substring(0,4);
+
+      if(typeof(Storage) !== "undefined"){
+        sessionStorage.setItem("start",option);
+        sessionStorage.setItem("end",option2);
+      }
+      else {
+         console.log("Sorry, your browser does not support Web Storage...");
+      }
+
+      location.href="BartStation.html";
+    }
+  </script>
+
+</div>
+
+
+<div id='container'>
+
+    <h1 style="font-family:Georgia">Bart Stations! </h1>
+    <div id='map'></div>
+</div>
+
+<br>
+<br>
+
+<script src='Sophia.js'></script>
+
+</script>
+
+</body>
+</html>
