@@ -2,6 +2,7 @@ var watchProcess = null;
 var myLat = 0;
 var myLong = 0;
 var vibrateOn = sessionStorage.getItem("vib");
+console.log(vibrateOn);
 
 $(document).ready(function(){
     stop_watchlocation();
