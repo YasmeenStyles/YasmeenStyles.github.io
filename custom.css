@@ -1,0 +1,14 @@
+body{
+	padding-top: 40px;
+}
+#question-number{
+	padding-bottom: 350px;
+	text-align: center;
+	padding-top: 30px;
+}
+#question{
+	padding-bottom: 100px;
+}
+.anchor {
+	padding-bottom: 35px;
+}
