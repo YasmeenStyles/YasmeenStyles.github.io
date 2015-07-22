@@ -113,16 +113,19 @@
 
 </div>
 <script>
-    var vibrateOn = false;
+    var vibrateOn = sessionStorage.getItem("vib");
 
     function startVibrate(duration) {
 	    navigator.vibrate(duration);
       if (vibrateOn == false){
         vibrateOn = true;
+        sessionStorage.setItem("vib", vibrateOn);
       }
       else {
         vibrateOn = false;
+        sessionStorage.setItem("vib", vibrateOn);
     }
+/*
     function stopVibrate() {
 	// Clear interval and stop persistent vibrating
 	if(vibrateInterval) clearInterval(vibrateInterval);
