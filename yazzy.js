@@ -51,7 +51,7 @@ function handle_geolocation_query(position){
     console.log('Lat: ' + position.coords.latitude +
     ' Lon: ' + position.coords.longitude);
     if (Math.abs(myLat - end_lat) < 0.0055 && Math.abs(myLong - end_long) < 0.0055){
-      if (vibrateOn == true){
+      if (vibrateOn == "true"){
         navigator.vibrate(50000);
       }
     }
