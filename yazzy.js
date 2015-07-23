@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function initiate_watchlocation() {
     if (watchProcess === null) {
-          var options = {timeout:60000};
+          var options = {timeout:60000, enableHighAccuracy:true};
           watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors, options);
     }
 }
