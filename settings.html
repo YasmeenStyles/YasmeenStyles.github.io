@@ -124,19 +124,22 @@
 <script>
     var vibrateOn = sessionStorage.getItem("vib");
     	console.log("stored val is " + vibrateOn);
-	console.log("update 6");
-	if(!vibrateOn){
+	console.log("update 7");
+
+	if(vibrateOn === false){
+		console.log("in false " + vibrateOn);
 		console.log("setting switch to false");
 		document.getElementById("vibrateCheckbox").checked = false;
 	}
 	else{
+		console.log("in true " + vibrateOn);
 		console.log("setting switch to true");
 		document.getElementById("vibrateCheckbox").checked = true;
 	}
     function startVibrate(duration) {
 		    navigator.vibrate(duration);
 		console.log("switch toggled: vibrateOn was " + vibrateOn);
-	      if (vibrateOn == false){
+	      if (vibrateOn === false){
 	      	console.log("setting vibrateOn to true and storing");
 	        vibrateOn = true;
 	        sessionStorage.setItem("vib", true);
