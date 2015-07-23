@@ -122,9 +122,9 @@
 
 </div>
 <script>
-    var vibrateOn = !sessionStorage.getItem("vib");
+    var vibrateOn = sessionStorage.getItem("vib");
     	console.log("stored val is " + vibrateOn);
-	console.log("update 5");
+	console.log("update 6");
 	if(!vibrateOn){
 		console.log("setting switch to false");
 		document.getElementById("vibrateCheckbox").checked = false;
