@@ -135,16 +135,16 @@
 	}
     function startVibrate(duration) {
 		    navigator.vibrate(duration);
-		console.log("vibrateOn was " + vibrateOn);
+		console.log("switch toggled: vibrateOn was " + vibrateOn);
 	      if (vibrateOn == false){
 	      	console.log("setting vibrateOn to true and storing");
 	        vibrateOn = true;
-	        sessionStorage.setItem("vib", vibrateOn);
+	        sessionStorage.setItem("vib", true);
 	      }
 	      else {
 	      	console.log("setting vibrateOn to false and storing");
 	        vibrateOn = false;
-	        sessionStorage.setItem("vib", vibrateOn);
+	        sessionStorage.setItem("vib", false);
 	    }
     }
 /*
