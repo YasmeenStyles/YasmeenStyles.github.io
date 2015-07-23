@@ -126,7 +126,7 @@
     	console.log("stored val is " + vibrateOn);
 	console.log("update 7");
 
-	if(vibrateOn === false){
+	if(vibrateOn === "false"){
 		console.log("in false " + vibrateOn);
 		console.log("setting switch to false");
 		document.getElementById("vibrateCheckbox").checked = false;
@@ -139,15 +139,15 @@
     function startVibrate(duration) {
 		    navigator.vibrate(duration);
 		console.log("switch toggled: vibrateOn was " + vibrateOn);
-	      if (vibrateOn === false){
+	      if (vibrateOn === "false"){
 	      	console.log("setting vibrateOn to true and storing");
-	        vibrateOn = true;
-	        sessionStorage.setItem("vib", true);
+	        vibrateOn = "true";
+	        sessionStorage.setItem("vib", vibrateOn);
 	      }
 	      else {
 	      	console.log("setting vibrateOn to false and storing");
-	        vibrateOn = false;
-	        sessionStorage.setItem("vib", false);
+	        vibrateOn = "false";
+	        sessionStorage.setItem("vib", vibrateOn);
 	    }
     }
 /*
