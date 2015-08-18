@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title> BART CHIME</title>
+    <title> BART CHIME | Alarm for BART</title>
     <link href="css/custom.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
@@ -42,7 +42,7 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 
     <style>
       body{
@@ -54,6 +54,19 @@
       #container { position:relative; margin: 0px auto; width: 80%;}
       #map { position:relative; height: 500px; width:100%; }
       .popupimage { width: 200px; }
+      @font-face{
+        font-family: amplitudes;
+        src: url('AmplitudesStretched.ttf');
+      }
+    .footer {
+      left:0px;
+      bottom:50px;
+      height:30px;
+      width:100%;
+      font-family: amplitudes;
+      text-align: center;
+      line-height: 0em;
+    }
     </style>
   </head>
    <body role="document">
@@ -110,8 +123,10 @@ function stopVibrate(){
 
 <script src= 'yazzy.js'></script>
 
+<div class="footer">
+  <h1 style="font-size:30px; color:#004383;"> B a r t &nbsp; C h i m e </h1>
+  <p1 style="font-size: 15px; color:#3366FF;"> M o r e  &nbsp; S l e e p .  &nbsp; &nbsp; B e t t e r &nbsp; L i f e s t y l e . </p1>
+</div>
+
 </body>
-<footer>
-<img style="width:150px;height:110px;" src="chimelogo.png"><img>
-</footer>
 </html>

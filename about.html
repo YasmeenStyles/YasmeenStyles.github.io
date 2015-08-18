@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title> BART CHIME</title>
+    <title> BART CHIME | Alarm for BART</title>
     <link href="css/custom.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
@@ -42,6 +42,8 @@
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
+      <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
     <style>
 
     body{
@@ -57,32 +59,31 @@
         size: 200%;
     }
 
-    .bg {
-    border-radius: 15px/50px;
-    background: #66CCFF;
-    padding: 20px;
-    width:300px;
-    height:300px;
-    }
 
-    .bg_sx {
-    border-radius: 15px/50px;
-    background: #66CCFF;
-    padding: 20px;
-    width:300px;
-    height:400px;
-    }
-
-    .textstyle_one {
-    border-radius: 15px/50px;
-    background: #66CCFF;
-    padding: 0px 0px 15px 0px;
-    font-family:Georgia;
+    @font-face{
+      font-family: uncertain;
+      src: url('uncertain_sans.ttf');
     }
 
     .textstyle {
-    font-family:Georgia;
+    font-family: uncertain;
     font-size: 20px;
+    padding: 20px;
+    background: #66CCFF;
+    }
+
+    @font-face{
+        font-family: amplitudes;
+        src: url('AmplitudesStretched.ttf');
+    }
+    .footer {
+      left:0px;
+      bottom:50px;
+      height:30px;
+      width:100%;
+      font-family: amplitudes;
+      text-align: center;
+      line-height: 0em;
     }
 
     </style>
@@ -116,25 +117,22 @@
      </nav>
     <br>
     <br>
-<!--     <h1 style="text-align:center; padding: 20px;font-family:Georgia"> About Us </h1>-->
-    <img style="width:100%; height:100%;" src="http://www.cornerstonenorthfield.org/uploads/2/1/3/3/21330160/7994210_orig.jpg"></img>
-    <h2 class="textstyle_one" > Developers </h2>
-    <img class="bg" src="https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xta1/v/t1.0-9/11113749_865805793472554_5265207856912910064_n.jpg?oh=6c129b48c3dba667fb2dcc5fe8c0f50d&oe=565C1557"></img>
-    <p class="textstyle" > Ida Gaim </p>
-    <img class="bg_sx" src="https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xpf1/v/t1.0-9/10989217_927192773990330_8788004028372108849_n.jpg?oh=6ba2acb7a1db1593904123b781691765&oe=5616EE7F"></img>
-    <p class="textstyle"> Sophia Cheng </p>
-    <img class="bg" src="https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xtf1/v/t1.0-9/11351384_956904621020311_1167692955173271070_n.jpg?oh=e99b263057e9d5ff6093e82d4ddfed31&oe=564632E2"></img>
-    <p class="textstyle"> Yasmeen Styles </p>
-    <img class="bg" src="https://pbs.twimg.com/profile_images/592505070182248448/4idWjkRc.jpg"></img>
-    <p class="textstyle"> Erica Kong </p>
+
+    <img style="width:100%; height:100%;" src="presentation.jpg"></img>
+    <p class="textstyle"> Developers of BART CHIME (from right to left): Sophia Cheng, Ida Gaim, Yasmeen Styles, Erica Kong. Giving presentation at Girls Who Code Summer Immersion Program graduation at Twitter. </p>
     <br>
     <br>
 
-    <p> Thanks to the participants and instructors of Twitter Girls Who Code 2015 for giving us such a memorable summer! </p>
     <img style="width:100%; height:100%;" src="https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xpa1/v/t1.0-9/11143670_10155738549530481_8418806961225929133_n.jpg?oh=6edc3ea291dfdca031e563a26c536668&oe=564E7CF2"></img>
+    <p class="textstyle"> Thanks to the participants and instructors of Twitter Girls Who Code 2015 for giving us such a memorable summer! </p>
+
+    
+
+    <div class="footer">
+        <h1 style="font-size:30px; color:#004383;"> B a r t &nbsp; C h i m e </h1>
+        <p1 style="font-size: 15px; color:#3366FF;"> M o r e  &nbsp; S l e e p .  &nbsp; &nbsp; B e t t e r &nbsp; L i f e s t y l e . </p1>
+    </div>
 
 </body>
-<footer>
-<img style="width:150px;height:110px;" src="chimelogo.png"><img>
-</footer>
+
 </html>
